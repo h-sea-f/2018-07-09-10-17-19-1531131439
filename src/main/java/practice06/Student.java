@@ -14,6 +14,6 @@ public class Student extends Person{
     }
     public Student(){}
     public String introduce(){
-        return "My name is "+name+". I am "+age+" years old. "+"I am a Student. I am at Class "+klass+".";
+        return super.introduce()+" I am a Student. I am at Class "+klass+".";
     }
 }
