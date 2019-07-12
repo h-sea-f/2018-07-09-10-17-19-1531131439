@@ -39,6 +39,7 @@ public class Teacher extends Person{
         boolean flag=false;
         for(int i=0;i<classes.size();i++){
             if(classes.get(i).number==student.klass.number) flag=true;
+//            if(classes.get(i).isIn(student)) flag=true;
         }
         return flag;
     }

@@ -5,11 +5,18 @@ public class Klass {
     protected int number;
     protected Student leader;
     protected List<Student> studentList=new ArrayList<Student>();
+    protected Teacher teacher;
     public Student getLeader() {
         return leader;
     }
     public void assignLeader(Student leader){
-        if(this.studentList.contains(leader)) this.leader=leader;
+        if(this.studentList.contains(leader)){
+            this.leader=leader;
+            if(this.teacher!=null){
+                teacher.printLeader(this,leader);
+            }
+
+        }
         else System.out.print("It is not one of us.\n");
 
     }
@@ -25,6 +32,10 @@ public class Klass {
     public void appendMember(Student student){
 
         this.studentList.add(student);
+        if(this.teacher!=null){
+            this.teacher.printaddStudent(this,student);
+        }
+
 
     }
     public boolean isIn(Student student){
