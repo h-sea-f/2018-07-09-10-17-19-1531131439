@@ -23,7 +23,7 @@ public class Teacher extends Person{
     }
     public String introduce(){
         for(int i=0;i<classes.size();i++){
-            if(i!=classes.size()-1) classNumer+=classes.get(i).getNumber()+"，";
+            if(i!=classes.size()-1) classNumer+=classes.get(i).getNumber()+", ";
             else classNumer+=classes.get(i).getNumber();
         }
         if(this.classes.size()==0) return super.introduce()+" I am a Teacher. I teach No Class.";
@@ -36,10 +36,11 @@ public class Teacher extends Person{
         else return super.introduce()+" I am a Teacher. I don't teach "+student.getName()+".";
     }
     public boolean isTeaching(Student student){
+        boolean flag=false;
         for(int i=0;i<classes.size();i++){
-            if(classes.get(i).studentList.contains(student)) return true;
+            if(classes.get(i).number==student.klass.number) flag=true;
         }
-        return false;
+        return flag;
     }
 
 }
